@@ -1,7 +1,7 @@
 class Ckeditor::AttachmentsController < Ckeditor::BaseController
 
   def index
-    @attachments = Ckeditor.file_model.order("id DESC")
+    @attachments = Ckeditor.file_model.desc(:created_at)
     respond_with(@attachments)
   end
   
