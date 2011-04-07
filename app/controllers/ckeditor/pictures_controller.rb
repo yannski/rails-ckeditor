@@ -1,7 +1,7 @@
 class Ckeditor::PicturesController < Ckeditor::BaseController
 
   def index
-    @pictures = Ckeditor.image_model.order("id DESC")
+    @pictures = Ckeditor.image_model.desc(:created_at)
     respond_with(@pictures) 
   end
   
